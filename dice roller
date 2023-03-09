@@ -1,3 +1,4 @@
+#https://github.com/lwiinberg
 #importing random module
 import random
 
@@ -21,5 +22,7 @@ while playing == True:
         result +=dice_roll
     print ("Result:     " +str(result))
     print ("Dice used:  "+str(throws))
+    result = 0
+    throws = 0
 
     roll_again = input ("Press enter to roll again "+"\n")
