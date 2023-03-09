@@ -1,25 +1,25 @@
 #importing random module
 import random
 
-#Amount of dice used
-dices = int(input ("How many dice do you wanna use? "))
-
 #How many eyes pr. dice
 eyes_on_dice = (1,2,3,4,5,6)
+
+#Amount of dice used
+dices = int(input ("How many dice do you wanna use? "+"\n"))
+playing = True
 
 #Intermediate Calculation
 result = 0
 throws = 0
 
 #Randomizer
-while throws < dices:
-    dice_roll = random.choice(eyes_on_dice)
-    throws += 1
-    result +=dice_roll
+#There is one virtual dice, so throws = amount of times that dice is rolled to simulate multiple dice being rolled (dices)
+while playing == True:
+    while throws < dices:
+        dice_roll = random.choice(eyes_on_dice)
+        throws += 1
+        result +=dice_roll
+    print ("Result:     " +str(result))
+    print ("Dice used:  "+str(throws))
 
-print (result)
-print (throws)
-
-roll_again = input ("Press enter to roll again ")
-if roll_again == "":
-    print("test")
+    roll_again = input ("Press enter to roll again "+"\n")
