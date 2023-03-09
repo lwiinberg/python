@@ -3,25 +3,26 @@
 import random
 
 #How many eyes pr. dice
-eyes_on_dice = (1,2,3,4,5,6)
+eyes_on_dice = (1, 2, 3, 4, 5, 6)
 
 #Amount of dice used
 dices = int(input ("How many dice do you wanna use? "+"\n"))
 playing = True
 
-#Intermediate Calculation
+#Set variables
 result = 0
 throws = 0
 
 #Randomizer
 #There is one virtual dice, so throws = amount of times that dice is rolled to simulate multiple dice being rolled (dices)
 while playing == True:
-    while throws < dices:
-        dice_roll = random.choice(eyes_on_dice)
-        throws += 1
-        result +=dice_roll
+    while throws < dices:                           #throws start at 0, and goes up to whatever value "dices# is
+        dice_roll = random.choice(eyes_on_dice)     #Picking a random number within the "eyes_on_dice" list/tuplet
+        throws += 1                                 #adding a throw to count
+        result +=dice_roll                          #Result from dice throw is added to the result
     print ("Result:     " +str(result))
     print ("Dice used:  "+str(throws))
+    #Reset variables
     result = 0
     throws = 0
 
